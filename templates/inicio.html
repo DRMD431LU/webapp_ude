@@ -1,0 +1,7 @@
+{{titulo}}
+{{request.user}}
+<form method="POST" action="">
+{% csrf_token %}	
+{{mi_formulario.as_p}}
+<input type='submit' value="registro"/>
+</form>
