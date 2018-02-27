@@ -7,6 +7,5 @@ class Registrado(models.Model):
 	email= models.EmailField()
 	timestamp=models.DateTimeField(auto_now_add=True,auto_now=False)
 	def __str__(self):
-		return self.email
-
+		return self.nombre
 
