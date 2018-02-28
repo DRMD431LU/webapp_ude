@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import RegForm,RegModelForm
+from .forms import RegModelForm,ContactForm
 from .models import Registrado
 def inicio(request):
 	titulo="hola"
@@ -18,8 +18,12 @@ def inicio(request):
 			instance.nombre="PERSONA"
 		instance.save()
 		contexto={
-			"titulo":"Gracias %s!"%(nombre)
+			"titulo":"Gracias %s!"%(nombre),
 		}
+		if not nombre:
+			contexto={
+				"titulo":"Gracias %s!"%(email),
+			}
 		print (instance)
 		print(instance.timestamp)
 		# form_data=form.cleaned_data
@@ -28,3 +32,19 @@ def inicio(request):
 		# obj=Registrado.objects.create(email=abc,nombre=abc2)
 	return render(request,"inicio.html",contexto)
 
+def contact(request):
+	form=ContactForm(request.POST or None)
+	if form.is_valid():
+		for key,value in form.cleaned_data.items():
+			print(key,value)
+		# for key in form.cleaned_data:
+		# 	print(key)
+		# 	print(form.cleaned_data.get(key))
+		# email=form.cleaned_data.get("email")
+		# mensaje=form.cleaned_data.get("mensaje")
+		# nombre=form.cleaned_data.get("nombre")
+		# print(email,mensaje, nombre)
+	context={
+	"form":form
+	}
+	return render(request,"forms.html",context)

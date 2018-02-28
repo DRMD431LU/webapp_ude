@@ -1,9 +1,7 @@
 {{titulo}}
 {{request.user}}
-{%if mi_formulario%}
 <form method="post" action="">
 {% csrf_token %}	
-{{mi_formulario.as_p}}
+{{form.as_p}}
 <input type='submit' value="registro"/>
 </form>
-{%endif%}
