@@ -9,4 +9,5 @@ class AdminRegistrado(admin.ModelAdmin):
 	form=RegModelForm
 	list_editable=["nombre"]
 	search_fields=["email","nombre"]
+	
 
