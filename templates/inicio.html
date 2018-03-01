@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{%load crispy_forms_tags%}
 {%block jumbotron_content%}
         <h1>Navbar example</h1>
         <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
@@ -10,7 +11,7 @@
 {%if mi_formulario%}
 <form method="post" action="">
 {% csrf_token %}	
-{{mi_formulario.as_p}}
+{{mi_formulario|crispy}}
 <input type='submit' value="registro"/>
 </form>
 {%endif%}

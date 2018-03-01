@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'boletin',
 ]
+CRISPY_TEMPLATE_PACK='bootsrap3'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
