@@ -37,15 +37,20 @@ EMAIL_USE_TLS=True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'registration',
+    'django.contrib.auth',
     'boletin',
 ]
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN=True
 CRISPY_TEMPLATE_PACK='bootsrap3'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

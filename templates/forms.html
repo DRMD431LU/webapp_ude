@@ -1,7 +1,17 @@
-{{titulo}}
-{{request.user}}
-<form method="post" action="">
+{%extends "base.html"%}
+
+
+{% block content %}
+<div class="row">
+	<div class="col-sm-3 col-sm-offset-3">
+	{%if titulo%}
+	<h1>{{titulo}}</h1>
+	{%endif%}
+	<form method="post" action="">
 {% csrf_token %}	
 {{form.as_p}}
-<input type='submit' value="registro"/>
+<input class="btn btn-primary" type='submit' value="registro"/>
 </form>
+</div>
+</div>
+{% endblock content %}
